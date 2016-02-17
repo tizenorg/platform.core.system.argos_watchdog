@@ -1,0 +1,14 @@
+
+# Package Information for pkg-config
+
+prefix=@PREFIX@
+exec_prefix=@EXEC_PREFIX@
+libdir=@LIBDIR@
+includedir=@INCLUDEDIR@
+
+Name: @LIB_NAME@
+Description: ARGOS library to detect application malfunctions.
+Version: @FULLVER@
+Requires:
+Libs: -L${libdir} -l@LIB_NAME@
+Cflags: -I${includedir}

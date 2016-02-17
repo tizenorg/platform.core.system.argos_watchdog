@@ -1,0 +1,7 @@
+[Unit]
+Description=aw_notify test
+
+[Service]
+ExecStart=/usr/bin/argos-test
+WatchdogSec=30
+Restart=always
