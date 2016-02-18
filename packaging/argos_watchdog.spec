@@ -34,7 +34,7 @@ ARGOS library to detect application malfunctions (devel)
 cp %{SOURCE1} .
 MAJORVER=`echo %{version} | awk 'BEGIN {FS="."}{print $1}'`
 
-cmake . \
+%cmake . \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DFULLVER=%{version} \
 	-DMAJORVER=${MAJORVER} \
