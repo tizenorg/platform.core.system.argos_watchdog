@@ -1,5 +1,4 @@
 %define libsystemd on
-%define test off
 
 Name:       argos_watchdog
 Summary:    ARGOS library to detect application malfunctions
@@ -38,8 +37,7 @@ MAJORVER=`echo %{version} | awk 'BEGIN {FS="."}{print $1}'`
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DFULLVER=%{version} \
 	-DMAJORVER=${MAJORVER} \
-	-DLIBSYSTEMD=%{libsystemd} \
-	-DTEST=%{test}
+	-DLIBSYSTEMD=%{libsystemd}
 
 make
 
@@ -66,7 +64,3 @@ cp LICENSE %{buildroot}%{_datadir}/license/%{name}
 %{_libdir}/pkgconfig/%{name}.pc
 %{_libdir}/lib%{name}.so
 %manifest %{name}.manifest
-%if %{?test} == on
-%{_bindir}/argos-test
-/usr/lib/systemd/system/argos-test.service
-%endif
